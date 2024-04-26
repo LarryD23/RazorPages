@@ -1,0 +1,34 @@
+﻿@page
+@model Vote_Final.Pages.Races.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Race</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Race.RaceName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Race.IsPartisan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Race.IsPartisan)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Race.RaceId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

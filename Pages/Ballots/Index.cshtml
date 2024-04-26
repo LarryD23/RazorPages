@@ -1,0 +1,271 @@
+﻿@page
+@model Vote_Final.Pages.Ballots.IndexModel
+@using Voting_Final.Models
+@using Vote_Final.Utilities
+
+<div class="ballot-header">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+   @*  <h3 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotName</h3>
+    <h4 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotDate.ToShortDateString()</h4> *@
+</div>
+
+<h2>Races</h2>
+<form method="post" asp-page-handler="OnPostSubmitBallotAsync">
+    <ul class="race-list">
+        @foreach (var race in Model.Races)
+        {
+            <h3>@race.RaceName</h3>
+            <ul>
+                @foreach (var candidateId in Model.CandidateRetrieval.GetValueOrDefault(race.RaceId, new List<int>()))
+                {
+                    var candidateDetails = Model.Candidates.FirstOrDefault(c => c.CandidateId == candidateId);
+                    <li>
+                        <label>
+                            <input type="radio" asp-for="@Model.RaceBallotSelection.CandidateId" value="@candidateId" />
+                            @candidateDetails.FirstName @candidateDetails.LastName - @candidateDetails.PartyAffiliation
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+    </ul> 
+
+
+    <h2>Ballot Issues</h2>
+    <ul class="ballot-issues-list">
+        @foreach (var bi in Model.BallotIssues)
+        {
+            <h3>@bi.Title - @bi.Description</h3>
+            <ul>
+                <li>
+                    <label>
+                        <input type="radio" asp-for="@Model.BallotSelection.BallotIssueId" value="true" /> For
+                    </label> <label>
+                        <input type="radio" asp-for="@Model.BallotSelection.BallotIssueId" value="false" /> Against
+                    </label>
+                </li>
+            </ul>
+        }
+    </ul>
+
+
+
+
+
+
+  <div class="submit-section">
+    <button type="submit">Submit Ballot</button>
+   </div>
+</form>
+
+
+
+@* PAGE TO REVERT TO 
+
+@* @page
+@model Vote_Final.Pages.Ballots.IndexModel
+@using Voting_Final.Models
+@using Vote_Final.Utilities
+
+
+
+
+<div class="ballot-header">
+    <h2 class="text-center">@ViewData["Title"]</h2>
+    <h3 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotName</h3>
+    <h4 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotDate.ToShortDateString()</h4>
+</div>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="ballot-container">
+    <h2>Races</h2>
+    <form method="post" asp-page-handler="OnPostSubmitBallotAsync" name="CandidateVote"> <!-- Add form element here -->
+    <ul class="race-list">
+        @foreach (var race in Model.Races)
+        {
+            <h3>@race.RaceName</h3>
+            <ul>
+                @foreach (var candidateId in Model.CandidateRetrieval.GetValueOrDefault(race.RaceId, new List<int>()))
+                {
+                    var candidateDetails = Model.Candidates.FirstOrDefault(c => c.CandidateId == candidateId);
+                    <li>
+                        <label>
+                            <input type="radio" name="@($"selectedCandidate_{race.RaceId}")" value="@candidateId" />
+                            @candidateDetails.FirstName @candidateDetails.LastName - @candidateDetails.PartyAffiliation
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+    </ul>
+   </form>
+
+</div>
+
+
+
+
+
+
+<h2>Ballot Issues</h2>
+<ul class="ballot-issues-list">
+    @foreach (var bi in Model.BallotIssues)
+    {
+        <h3></h3>
+        <ul>
+            @{
+                var ballotIssues = Model.BallotIssueRetrieval.GetValueOrDefault(bi.BallotIssueId, new List<BallotIssue>());
+            }
+            @foreach (var ballotIssue in ballotIssues)
+            {
+                <li>@ballotIssue.Title - @ballotIssue.Description</li>
+                <form method="post" name="BallotIssueVote_@ballotIssue.BallotIssueId">
+                    <label>
+                        <input type="radio" name="options[@bi.BallotIssueId]" value="true" @(bi.Options ? "checked" : "")> For
+                    </label>
+                    <label>
+                        <input type="radio" name="options[@bi.BallotIssueId]" value="false" @(bi.Options ? "" : "checked")> Against
+                    </label>
+                   
+                </form>
+             
+               
+            }
+        </ul>
+    }
+</ul>
+
+<div class="submit-section">
+    <form method="post" asp-page-handler="OnPostSubmitBallotAsync">
+        <button type="submit" class="btn btn-primary">Submit Ballot</button>
+    </form>
+</div>
+
+
+
+
+@section Scripts {
+    <script>
+        //initialize selection object
+        var userSelections = [];
+
+        //function to update selections for race
+        function updateSelection(raceId, candidateId) 
+        {
+            userSelections[raceId] = candidateId;
+        }
+
+        //event listeners to selection elements
+        document.querySelectorAll('.candidate-selection').forEach(item => {
+            item.addEventListener('change', event => {
+                // Get the race ID and selected candidate ID
+                var raceId = item.getAttribute('data-race-id');
+                var candidateId = item.value; 
+
+                // Update user selections for the race
+                updateSelection(raceId, candidateId);
+            });
+        });
+        
+        // Function to handle form submission
+        function submitBallot() 
+        {
+         
+            // Send the user selections to the server using an AJAX request
+            fetch('/Ballots/SubmitBallot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userSelections)
+            })
+                .then(response => {
+                    // Check if the response indicates success
+                    if (response.ok) {
+                        // Display a success message or perform any other action
+                        alert('Ballot submitted successfully!');
+                    } else {
+                        // Handle server errors or other issues
+                        throw new Error('Error submitting ballot');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Display an error message 
+                    alert('Error submitting ballot. Please try again later.');
+                });
+        }
+        addEventListener('submit', function (event) 
+        {
+            submitBallot();
+
+        } *@
+     @*    //     event.preventDefault();
+        //     // Call the submitBallot function when the button is clicked
+        //     submitBallot();
+        // });
+
+        // // Attach an event listener to the CandidateVote form
+        // document.querySelector('form[name="CandidateVote"]').addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     // Call the submitBallot function when the button is clicked
+        //     submitBallot();
+        // });
+
+        // // Attach an event listener to the BallotIssueVote form
+        // document.querySelector('form[name="BallotIssueVote"]').addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     // Call the submitBallot function when the button is clicked
+        //     submitBallot();
+        // });
+
+    </script>
+}
+ *@
+
+
+
+@* @page
+@model Vote_Final.Pages.Ballots.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ballot[0].BallotName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ballot[0].BallotDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Ballot) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BallotName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BallotDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BallotId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BallotId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BallotId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

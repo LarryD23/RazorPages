@@ -1,0 +1,42 @@
+﻿@page
+@model Vote_Final.Pages.Races.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Race[0].RaceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Race[0].IsPartisan)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Race) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPartisan)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RaceId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RaceId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RaceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

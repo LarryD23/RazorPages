@@ -1,0 +1,31 @@
+﻿@page
+@model Vote_Final.Pages.Races.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Race</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Race.RaceName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Race.IsPartisan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Race.IsPartisan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Race.RaceId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
