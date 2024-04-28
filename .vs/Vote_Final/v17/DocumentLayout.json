@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\gitreps\\paulnetlab9\\Vote_Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\twilioverifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:twilioverifyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\pages\\ballots\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:pages\\ballots\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\pages\\ballots\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:pages\\ballots\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\models\\voter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +19,24 @@
       "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:viewmodels\\ballotmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\viewmodels\\racemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:viewmodels\\racemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\pages\\ballots\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:pages\\ballots\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\pages\\ballots\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:pages\\ballots\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\models\\ballot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:models\\ballot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\models\\domaincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:models\\domaincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\models\\race.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:models\\race.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|c:\\gitreps\\paulnetlab9\\vote_final\\pages\\ballots\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4F89587C-1957-41EE-BDEF-D8246B771C1A}|Vote_Final.csproj|solutionrelative:pages\\ballots\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Voter.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Voter.cs",
-              "RelativeDocumentMoniker": "Models\\Voter.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Voter.cs",
-              "RelativeToolTip": "Models\\Voter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:18:44.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TwilioVerifyService.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\TwilioVerifyService.cs",
-              "RelativeDocumentMoniker": "TwilioVerifyService.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\TwilioVerifyService.cs",
-              "RelativeToolTip": "TwilioVerifyService.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Ballots\\Index.cshtml.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Ballots\\Index.cshtml.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCEAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:19:12.606Z",
+              "WhenOpened": "2024-04-17T17:31:20.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BallotModel.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\BallotModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\BallotModel.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\BallotModel.cs",
-              "RelativeToolTip": "ViewModels\\BallotModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:12:50.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RaceModel.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\RaceModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\RaceModel.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\RaceModel.cs",
-              "RelativeToolTip": "ViewModels\\RaceModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:11:16.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Race.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Race.cs",
-              "RelativeDocumentMoniker": "Models\\Race.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Race.cs",
-              "RelativeToolTip": "Models\\Race.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:10:12.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Ballots\\Index.cshtml",
               "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml",
               "RelativeToolTip": "Pages\\Ballots\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABIAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACkAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-17T17:41:12.614Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Ballots\\Index.cshtml.cs",
-              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml.cs",
-              "RelativeToolTip": "Pages\\Ballots\\Index.cshtml.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAD4vywAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "Voter.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Voter.cs",
+              "RelativeDocumentMoniker": "Models\\Voter.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Voter.cs",
+              "RelativeToolTip": "Models\\Voter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T17:31:20.052Z",
+              "WhenOpened": "2024-04-24T16:18:44.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T21:49:43.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DomainContext.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\DomainContext.cs",
+              "RelativeDocumentMoniker": "Models\\DomainContext.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\DomainContext.cs",
+              "RelativeToolTip": "Models\\DomainContext.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAkwBwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T21:51:31.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ballot.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Ballot.cs",
+              "RelativeDocumentMoniker": "Models\\Ballot.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Ballot.cs",
+              "RelativeToolTip": "Models\\Ballot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T21:29:54.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BallotModel.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\BallotModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\BallotModel.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\ViewModels\\BallotModel.cs",
+              "RelativeToolTip": "ViewModels\\BallotModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T21:36:21.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Success.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Ballots\\Success.cshtml",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Success.cshtml",
+              "RelativeToolTip": "Pages\\Ballots\\Success.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T22:35:53.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Race.cs",
+              "DocumentMoniker": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Race.cs",
+              "RelativeDocumentMoniker": "Models\\Race.cs",
+              "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Models\\Race.cs",
+              "RelativeToolTip": "Models\\Race.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAUwDEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T16:10:12.517Z",
               "EditorCaption": ""
             }
           ]

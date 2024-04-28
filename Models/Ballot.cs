@@ -13,7 +13,7 @@ namespace Voting_Final.Models
         public string BallotName { get; set; }
 
         [Required]
-        [StringLength(255)]
+      
         [Display(Name = "Date")]
         public DateTime BallotDate { get; set; }
 

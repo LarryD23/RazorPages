@@ -10,6 +10,7 @@ using Vote_Final.Utilities;
 using System.Text.Json;
 using NuGet.Packaging.Signing;
 using Vote_Final.Models;
+using Vote_Final.ViewModels;
 
 namespace Vote_Final.Pages.Ballots
 {
@@ -24,40 +25,33 @@ namespace Vote_Final.Pages.Ballots
             _context = context;
         }
 
-        //[BindProperty]
-        //public Dictionary<int, (int CandidateId, bool IsFor)> UserSelections { get; set; }
+        [BindProperty]
+        public BallotModel BallotModel { get; set; }
 
-        //[BindProperty]
-        //public BallotSelection BallotSelection { get; set; }
+        [BindProperty]
+        public BallotIssueSelection BallotIssueSelection {  get; set; }
+        [BindProperty]
+        public List<RaceBallotSelection> RaceBallotSelections { get; set; }
 
-
-        //public string GetCandidateName(int candidateId)
-        //{
-        //    var candidate = _context.Candidate.FirstOrDefault(c => c.CandidateId == candidateId);
-        //    return candidate != null ? $"{candidate.FirstName} {candidate.LastName}" : "Candidate Not Found";
-        //}
-
-
-
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            ViewData["Title"] = "Ballots";
-
-            //Ballots = await _context.Ballot.ToListAsync();
-            Races = await _context.Race.ToListAsync();
-            Candidates = await _context.Candidate.ToListAsync();
-            BallotIssues = await _context.BallotIssue.ToListAsync();
-            CandidateRetrieval = RaceUtility.GetCandidatesForRaces(_context, await GetLatestBallotId());
-            BallotIssueRetrieval = RaceUtility.GetBallotIssuesForBallots(_context, await GetLatestBallotId());
-            _context.Database.EnsureCreated();
-
-            int latestBallotId = await GetLatestBallotId();
-
-            var validBallot = Ballots.FirstOrDefault(b => b.BallotId == latestBallotId);
-            if (validBallot == null)
+            if (id == null)
             {
-                throw new ArgumentException("Invalid BallotId");
+                var latestBallotId = await GetLatestBallotId();
+                return RedirectToPage("/Ballots/Index", new { id = latestBallotId });
             }
+
+            var ballot = await _context.Ballot.FirstOrDefaultAsync(m => m.BallotId == id);
+
+            if (ballot == null)
+            {
+                return NotFound();
+            }
+
+            BallotModel= BallotModel.BallotModelRefactory(ballot, _context);
+
+            return Page();
+         
 
         }
 
@@ -69,26 +63,17 @@ namespace Vote_Final.Pages.Ballots
                 return BadRequest(ModelState);
             }
 
-            int ballotId = await GetLatestBallotId();
+            BallotIssueSelection.VoterId = 1;
+            RaceBallotSelections.VoterId = 1;
 
-            // Create a new BallotSelection object and bind form data to it
-            //var ballotSelection = new BallotSelection();
-            if (await TryUpdateModelAsync(ballotSelection, "BallotSelection"))
-            {
-                // Validation successful, proceed with saving to the database
-                ballotSelection.BallotId = ballotId;
-                ballotSelection.TimeStamp = DateTime.UtcNow;
+            _context.BallotIssueSelection.Add(BallotIssueSelection);
+            _context.RaceBallotSelection.Add(RaceBallotSelection);
+            
+            var changes = await _context.SaveChangesAsync();
 
-                _context.BallotSelection.Add(ballotSelection);
-                await _context.SaveChangesAsync();
+            
 
-                return new RedirectToPageResult("/Ballots/Index");
-            }
-            else
-            {
-                // Model binding failed, return a bad request
-                return BadRequest(ModelState);
-            }
+            return RedirectToPage("/Success");
         }
 
 
@@ -103,22 +88,22 @@ namespace Vote_Final.Pages.Ballots
 
 
 
-        public IList<Ballot> Ballots { get; set; } = default!;
-        public IList<Race> Races { get; set; } = default!;
+        //public IList<Ballot> Ballots { get; set; } = default!;
+        //public IList<Race> Races { get; set; } = default!;
 
-        public IList<Candidate> Candidates { get; set; } = default!;
+        //public IList<Candidate> Candidates { get; set; } = default!;
 
-        public IList<BallotIssue> BallotIssues { get; set; } = default!;
+        //public IList<BallotIssue> BallotIssues { get; set; } = default!;
 
-        public Dictionary<int, List<int>> CandidateRetrieval { get; set; }
+        //public Dictionary<int, List<int>> CandidateRetrieval { get; set; }
 
-        public Dictionary<int, List<BallotIssue>> BallotIssueRetrieval { get; set; }
+        //public Dictionary<int, List<BallotIssue>> BallotIssueRetrieval { get; set; }
 
-        public string GetCandidateName(int candidateId)
-        {
-            var candidate = _context.Candidate.FirstOrDefault(c => c.CandidateId == candidateId);
-            return candidate != null ? $"{candidate.FirstName} {candidate.LastName}" : "Candidate Not Found";
-        }
+        //public string GetCandidateName(int candidateId)
+        //{
+        //    var candidate = _context.Candidate.FirstOrDefault(c => c.CandidateId == candidateId);
+        //    return candidate != null ? $"{candidate.FirstName} {candidate.LastName}" : "Candidate Not Found";
+        //}
 
     }
 }

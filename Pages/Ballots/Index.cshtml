@@ -2,27 +2,28 @@
 @model Vote_Final.Pages.Ballots.IndexModel
 @using Voting_Final.Models
 @using Vote_Final.Utilities
+@using Microsoft.AspNetCore.Mvc.Rendering
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="ballot-header">
     <h2 class="text-center">@ViewData["Title"]</h2>
-   @*  <h3 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotName</h3>
-    <h4 class="text-center">@Model.Ballots.FirstOrDefault()?.BallotDate.ToShortDateString()</h4> *@
+    <h3 class="text-center">@Model.BallotModel.Ballot.BallotName</h3>
+    <h4 class="text-center">@Model.BallotModel.Ballot.BallotDate.ToShortTimeString()</h4>
 </div>
 
 <h2>Races</h2>
 <form method="post" asp-page-handler="OnPostSubmitBallotAsync">
     <ul class="race-list">
-        @foreach (var race in Model.Races)
+        @foreach (var raceModel in Model.BallotModel.RaceModels)
         {
-            <h3>@race.RaceName</h3>
+            <h3>@raceModel.Race.RaceName</h3>
             <ul>
-                @foreach (var candidateId in Model.CandidateRetrieval.GetValueOrDefault(race.RaceId, new List<int>()))
+                @foreach (var candidate in raceModel.Candidates)
                 {
-                    var candidateDetails = Model.Candidates.FirstOrDefault(c => c.CandidateId == candidateId);
                     <li>
                         <label>
-                            <input type="radio" asp-for="@Model.RaceBallotSelection.CandidateId" value="@candidateId" />
-                            @candidateDetails.FirstName @candidateDetails.LastName - @candidateDetails.PartyAffiliation
+                            <input type="radio" asp-for="RaceBallotSelection.CandidateId" value="@candidate.CandidateId" />
+                            @candidate.FirstName @candidate.LastName - @candidate.PartyAffiliation
                         </label>
                     </li>
                 }
@@ -30,18 +31,35 @@
         }
     </ul> 
 
+    <!--Hidden inputs to store selection on BallotIssue and Races-->
+    <input type="hidden" asp-for="BallotIssueSelection.BallotId" />
+    <input type="hidden" asp-for="BallotIssueSelection.TimeStamp" />
+    <input type="hidden" asp-for="BallotIssueSelection.BallotIssueId" />
+    <input type="hidden" asp-for="BallotIssueSelection.IsFor" />
+
+    <input type="hidden" asp-for="RaceBallotSelection.RaceId" />
+    <input type="hidden" asp-for="RaceBallotSelection.BallotId" />
+    <input type="hidden" asp-for="RaceBallotSelection.TimeStamp" />
+    
+    <input type="hidden" asp-for="BallotModel.Ballot.BallotName" />
+    <input type="hidden" asp-for="BallotModel.Ballot.BallotDate" />
+    <input type="hidden" asp-for="BallotModel.RaceModels" />
+    <input type="hidden" asp-for="BallotModel.BallotIssues" />
+
+
+
 
     <h2>Ballot Issues</h2>
     <ul class="ballot-issues-list">
-        @foreach (var bi in Model.BallotIssues)
+        @foreach (var bi in Model.BallotModel.BallotIssues)
         {
             <h3>@bi.Title - @bi.Description</h3>
             <ul>
                 <li>
                     <label>
-                        <input type="radio" asp-for="@Model.BallotSelection.BallotIssueId" value="true" /> For
+                        <input type="radio" asp-for="BallotIssueSelection.IsFor" value="@bi.YesOption" /> @bi.YesOption - For
                     </label> <label>
-                        <input type="radio" asp-for="@Model.BallotSelection.BallotIssueId" value="false" /> Against
+                        <input type="radio" asp-for="BallotIssueSelection.IsFor" value="@bi.NoOption" /> @bi.NoOption - Against
                     </label>
                 </li>
             </ul>
