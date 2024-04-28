@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "Pages\\Ballots\\Index.cshtml.cs",
               "ToolTip": "C:\\gitreps\\paulnetlab9\\Vote_Final\\Pages\\Ballots\\Index.cshtml.cs",
               "RelativeToolTip": "Pages\\Ballots\\Index.cshtml.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAQwCEAAABLAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowEQAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T17:31:20.052Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "Pages\\Ballots\\Index.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACkAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T17:41:12.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T17:41:12.614Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Models\\Voter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:18:44.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T16:18:44.288Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:49:43.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T21:49:43.127Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Models\\DomainContext.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAkwBwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:51:31.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T21:51:31.214Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Models\\Ballot.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAwwAwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:29:54.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T21:29:54.946Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "ViewModels\\BallotModel.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:36:21.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T21:36:21.645Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "Pages\\Ballots\\Success.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-27T22:35:53.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T22:35:53.433Z"
             },
             {
               "$type": "Document",
@@ -162,8 +155,7 @@
               "RelativeToolTip": "Models\\Race.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAUwDEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:10:12.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T16:10:12.517Z"
             }
           ]
         }
