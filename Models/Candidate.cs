@@ -22,16 +22,7 @@ namespace Voting_Final.Models
         [Display(Name = "Party")]
         public string PartyAffiliation { get; set; }
 
-        //public RaceCandidate RaceCandidate { get; set; }
 
-        
-        //[StringLength(255)]
-        //[Display(Name = "RaceCandidateID")]
-        //public int RaceCandidateId { get; set; }
-        
-        //public virtual ICollection<RaceCandidate> RaceCandidates { get; set; }
-
-        //public int? RaceId { get; set; }
         
 
         public override string ToString()

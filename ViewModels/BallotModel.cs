@@ -11,6 +11,8 @@ namespace Vote_Final.ViewModels
 
         public List<BallotIssue> BallotIssues { get; set; }
 
+        public Dictionary<string, bool> IsFors { get; set; }
+
         public static BallotModel BallotModelRefactory(Ballot ballot, DomainContext dbContext)
         {
             var ballotModel = new BallotModel();
@@ -38,6 +40,17 @@ namespace Vote_Final.ViewModels
 
                 //populate the ballotIssues in the BallotModel
                 ballotModel.BallotIssues = fetchedBallot.BallotIssues.ToList();
+                //use ballotissue_yes, 
+
+                //initialize IsFors Dictionary
+                ballotModel.IsFors = new Dictionary<string, bool>();
+
+                //loop through ballotissues and add entries to dictionary 
+                foreach (var issue in fetchedBallot.BallotIssues )
+                {
+                    ballotModel.IsFors[$"ballotIssue{issue.BallotIssueId}_Yes" ] = true;
+                    ballotModel.IsFors[$"ballotIssue{issue.BallotIssueId}_No"] = false;
+                }
             }
 
             return ballotModel;

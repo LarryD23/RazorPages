@@ -123,6 +123,8 @@ namespace Voting_Final.Models
             candidateList.Add(new Candidate() { CandidateId = 2, FirstName = "Donna", LastName = "Diamond", PartyAffiliation = "Green Party" });
             candidateList.Add(new Candidate() { CandidateId = 3, FirstName = "Javier", LastName = "Mendez", PartyAffiliation = "Socialista" });
             candidateList.Add(new Candidate() { CandidateId = 4, FirstName = "Larry", LastName = "Diamond", PartyAffiliation = "Get Down Party" });
+            candidateList.Add(new Candidate() { CandidateId = 5, FirstName = "Steven", LastName = "Huffer", PartyAffiliation = "Non-Partisan" });
+            candidateList.Add(new Candidate() { CandidateId = 6, FirstName = "Reg", LastName = "Black", PartyAffiliation = "Non-Partisan" });
             modelBuilder.Entity<Candidate>().HasData(candidateList);
 
             IList<Race> raceList = new List<Race>();
@@ -144,10 +146,18 @@ namespace Voting_Final.Models
             raceCandidateList.Add(new RaceCandidate { RaceCandidateId = 2 , CandidateId = 2, RaceId = 1 });
             raceCandidateList.Add(new RaceCandidate {RaceCandidateId = 3, CandidateId = 3, RaceId = 1 });
             raceCandidateList.Add(new RaceCandidate {RaceCandidateId = 4, CandidateId = 4, RaceId = 2 });
+            raceCandidateList.Add(new RaceCandidate { RaceCandidateId = 5, CandidateId = 5, RaceId = 3 });
+            raceCandidateList.Add(new RaceCandidate { RaceCandidateId = 6, CandidateId = 5, RaceId = 3 });
+
+
             modelBuilder.Entity<RaceCandidate>().HasData(raceCandidateList);
 
             IList<Voter> voterList = new List<Voter>();
             voterList.Add(new Voter { VoterId = 1, VoterName = "John Smith", Address = "123 3rd St", Phone = "406-555-9854", VotingDistrict = "Ninth", VoterStatus = "Active", IsAlive = true });
+            voterList.Add(new Voter { VoterId = 2, VoterName = "Steve Thereses", Address = "123 4rd St", Phone = "406-785-1111", VotingDistrict = "Seventh", VoterStatus = "InActive", IsAlive = true });
+            voterList.Add(new Voter { VoterId = 3, VoterName = "Petey Pablo", Address = "123 8th St", Phone = "406-321-7414", VotingDistrict = "Tenth", VoterStatus = "Active", IsAlive = true });
+
+
             modelBuilder.Entity<Voter>().HasData(voterList);    
         }
 

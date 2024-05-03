@@ -7,22 +7,133 @@
 
 <div class="ballot-header">
     <h2 class="text-center">@ViewData["Title"]</h2>
+    <div class="text-center">
+        <p><b>Name:</b>@HttpContext.Session.GetString("_Name");<b>Id: 
+</b> @HttpContext.Session.GetInt32("_Id").ToString()</p>
+    </div>
     <h3 class="text-center">@Model.BallotModel.Ballot.BallotName</h3>
-    <h4 class="text-center">@Model.BallotModel.Ballot.BallotDate.ToShortTimeString()</h4>
+    <h4 class="text-center">@Model.BallotModel.Ballot.BallotDate</h4>
 </div>
 
 <h2>Races</h2>
-<form method="post" asp-page-handler="OnPostSubmitBallotAsync">
+<form method="post" asp-page-handler="OnPost">
     <ul class="race-list">
         @foreach (var raceModel in Model.BallotModel.RaceModels)
         {
-            <h3>@raceModel.Race.RaceName</h3>
+            <li>@raceModel.Race.RaceName</li>
             <ul>
                 @foreach (var candidate in raceModel.Candidates)
                 {
                     <li>
                         <label>
+                            <input type="radio" name="SelectedCandidateIds[@raceModel.Race.RaceId]" value="@candidate.CandidateId" />
+                            @candidate.FirstName @candidate.LastName - @candidate.PartyAffiliation
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+    </ul>
+
+
+
+    <h2>Ballot Issues</h2>
+    <ul class="ballot-issues-list">
+        @foreach (var issue in Model.BallotModel.BallotIssues)
+        {
+            <li>
+                <label>
+                    @issue.Title - @issue.Description
+                </label>
+                <br />
+                <label>
+                    <input type="radio" name="IsFors[@($"ballotIssue{issue.BallotIssueId}_Yes")]" value="true" />  @issue.YesOption
+                </label>
+                <label>
+                    <input type="radio" name="IsFors[@($"ballotIssue{issue.BallotIssueId}_No")]" value="false" />  @issue.NoOption
+                </label>
+            </li>
+        }
+    </ul>
+
+    <button type="submit">Submit</button>
+
+
+   
+
+
+</form>
+
+
+
+@* <h2>Races</h2>
+<form method="post" asp-page-handler="OnPost">
+    <ul class="race-list">
+        @foreach (var raceModel in Model.BallotModel.RaceModels)
+        {
+            <li>@raceModel.Race.RaceName</li>
+            <ul>
+                @foreach (var candidate in raceModel.Candidates)
+                {
+                    <li>
+                        <label>
+                          
+                            <input type="hidden" asp-for="RaceBallotSelection.RaceId" value="@raceModel.Race.RaceId" />
+                           
                             <input type="radio" asp-for="RaceBallotSelection.CandidateId" value="@candidate.CandidateId" />
+                            @candidate.FirstName @candidate.LastName - @candidate.PartyAffiliation
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+    </ul> *@
+
+@*    
+   
+    
+    <!--Hidden inputs to store selection on BallotIssue and Races-->
+ @*    <input type="hidden" asp-for="BallotIssueSelection.BallotId" />
+    <input type="hidden" asp-for="BallotIssueSelection.TimeStamp" />
+    <input type="hidden" asp-for="BallotIssueSelection.BallotIssueId" />
+    <input type="hidden" asp-for="BallotIssueSelection.IsFor" />
+
+     <input type="hidden" asp-for="RaceBallotSelection.RaceId" />  
+     <input type="hidden" asp-for="RaceBallotSelection.BallotId" />
+    <input type="hidden" asp-for="RaceBallotSelection.TimeStamp" />
+
+    <input type="hidden" asp-for="BallotModel.Ballot.BallotName" />
+    <input type="hidden" asp-for="BallotModel.Ballot.BallotDate" />
+    <input type="hidden" asp-for="BallotModel.RaceModels" />
+    <input type="hidden" asp-for="BallotModel.BallotIssues" /> *@
+
+
+
+
+
+
+
+
+
+
+
+
+@*     <button type="submit" class="btn btn-primary">Submit Ballot</button>
+
+</form>
+ *@
+    @* <h2>Races</h2>
+<form method="post" asp-page-handler="OnPostSubmitBallotAsync">
+    <ul class="race-list">
+        @foreach (var rm in Model.BallotModel.RaceModels)
+        {
+            <li>@rm.Race.RaceName</li>
+            <ul>
+                @foreach (var candidate in rm.Candidates)
+                {
+                    <li>
+                        <label>
+                            <input type="radio" asp-for="@Model.BallotModel." value="@candidate.CandidateId" />
                             @candidate.FirstName @candidate.LastName - @candidate.PartyAffiliation
                         </label>
                     </li>
@@ -31,50 +142,7 @@
         }
     </ul> 
 
-    <!--Hidden inputs to store selection on BallotIssue and Races-->
-    <input type="hidden" asp-for="BallotIssueSelection.BallotId" />
-    <input type="hidden" asp-for="BallotIssueSelection.TimeStamp" />
-    <input type="hidden" asp-for="BallotIssueSelection.BallotIssueId" />
-    <input type="hidden" asp-for="BallotIssueSelection.IsFor" />
 
-    <input type="hidden" asp-for="RaceBallotSelection.RaceId" />
-    <input type="hidden" asp-for="RaceBallotSelection.BallotId" />
-    <input type="hidden" asp-for="RaceBallotSelection.TimeStamp" />
-    
-    <input type="hidden" asp-for="BallotModel.Ballot.BallotName" />
-    <input type="hidden" asp-for="BallotModel.Ballot.BallotDate" />
-    <input type="hidden" asp-for="BallotModel.RaceModels" />
-    <input type="hidden" asp-for="BallotModel.BallotIssues" />
-
-
-
-
-    <h2>Ballot Issues</h2>
-    <ul class="ballot-issues-list">
-        @foreach (var bi in Model.BallotModel.BallotIssues)
-        {
-            <h3>@bi.Title - @bi.Description</h3>
-            <ul>
-                <li>
-                    <label>
-                        <input type="radio" asp-for="BallotIssueSelection.IsFor" value="@bi.YesOption" /> @bi.YesOption - For
-                    </label> <label>
-                        <input type="radio" asp-for="BallotIssueSelection.IsFor" value="@bi.NoOption" /> @bi.NoOption - Against
-                    </label>
-                </li>
-            </ul>
-        }
-    </ul>
-
-
-
-
-
-
-  <div class="submit-section">
-    <button type="submit">Submit Ballot</button>
-   </div>
-</form>
 
 
 
@@ -218,7 +286,7 @@
         {
             submitBallot();
 
-        } *@
+        }
      @*    //     event.preventDefault();
         //     // Call the submitBallot function when the button is clicked
         //     submitBallot();
